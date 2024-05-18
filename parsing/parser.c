@@ -54,7 +54,7 @@ t_node	*ft_expression(int min_prec)
 		ft_get_next_token();
 		if (!g_minishell.curr_token)
 			return (ft_set_parse_err(E_SYNTAX), left);
-		n_prec = ft_prec(op) + 1;
+		n_prec = ft_prec(op);
 		right = ft_expression(n_prec);
 		if (!right)
 			return (left);
